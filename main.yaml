@@ -1,3 +1,4 @@
+
 - name: Installing Roboshop project
   hosts: localhost
   become: yes
