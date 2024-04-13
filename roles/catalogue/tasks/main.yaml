@@ -2,6 +2,9 @@
 # catalogue is one role
 # common is also another role
 # I need to import a task nodejs.yaml in catalogue
+- name: print app version
+  debug:
+    msg: "APP version is : {{app_version}}"
 
 - name: Install NodeJS
   ansible.builtin.import_role:
@@ -18,10 +21,10 @@
   args:
     chdir: /app
 
-- name: Load Schema
-  ansible.builtin.import_role:
-    name: common
-    tasks_from: load-mongo-schema
+# - name: Load Schema
+#   ansible.builtin.import_role:
+#     name: common
+#     tasks_from: load-mongo-schema
 
 - name: Start application
   ansible.builtin.import_role:
